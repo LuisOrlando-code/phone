@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* 📱 PHONE */
+.phone {
+    width: 260px;
+    height: 520px;
+    border-radius: 40px;
+    background: #000;
+    padding: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* SCREEN */
+.screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #222, #000);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🟢 DYNAMIC ISLAND */
+.dynamic-island {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 35px;
+    background: black;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.dynamic-island:hover {
+    width: 220px;
+    height: 90px;
+}
+
+/* CONTENT */
+.content {
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.dynamic-island:hover .content {
+    opacity: 1;
+}
+
+/* LEFT SIDE */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.album {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, purple, pink);
+    border-radius: 8px;
+}
+
+.info span {
+    font-size: 12px;
+}
+
+.info small {
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+/* RIGHT SIDE */
+.right {
+    margin-top: 8px;
+}
+
+.bar {
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+/* 🎨 PALETTE */
+.palette {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.palette label {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* COLORS */
+label[for="purple"] { background: purple; }
+label[for="gold"] { background: gold; }
+label[for="black"] { background: black; }
+label[for="silver"] { background: silver; }
+
+/* THEMES */
+#purple:checked ~ .phone .screen {
+    background: linear-gradient(180deg, purple, black);
+}
+
+#gold:checked ~ .phone .screen {
+    background: linear-gradient(180deg, gold, black);
+}
+
+#black:checked ~ .phone .screen {
+    background: linear-gradient(180deg, #111, black);
+}
+
+#silver:checked ~ .phone .screen {
+    background: linear-gradient(180deg, silver, black);
+}
+
+input {
+    display: none;
+}
